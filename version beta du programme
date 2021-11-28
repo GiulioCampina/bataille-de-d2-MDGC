@@ -1,0 +1,80 @@
+# Mini projet (Combat de dés) Groupe - GCMD
+#nous avons ajouté la bibliothèque time pour la fonction sleep
+
+from random import *
+from time import *
+
+print("Bienvenue dans le jeu Combat de dés!!")
+sleep(1)
+print("Le premier joueur à un nombre de points choisis au prealable remporte la partie")
+print("Un double 6 rapport 1 point; trois 6 rapport 2 points; quatre 6 rapport 4 points; cinq 6 rapport 8 points")
+sleep(1.5)
+print("Choix des pseudos:")
+p_one_name = str(input("Pseudo Joueur 1 :"))
+p_two_name = str(input("Pseudo Joueur 2 :"))
+n_points_max = int(input("combien de points faut-il pour gagner ?"))
+
+def lance():
+    '''La fonction qui "lance" les dix dés, en générant aléatoirement une liste de 10 valeurs comprise entre 1 et 6'''
+    newliste = []
+    for i in range(10):
+        newliste.append(randint(1, 6))
+
+    return newliste
+
+
+def comptage(liste):
+    '''La fonction qui "compte" le nombre de 6, en parcourant la liste générer dans la fonction précédante '''
+    occurrence = 0
+    print(liste)
+    for i in liste:
+        if i == 6:
+            occurrence += 1
+    return occurrence
+
+
+def assignation_des_points(occurrence):
+    if occurrence == 2:
+        points = 1
+    elif occurrence == 3:
+        points = 2
+    elif occurrence == 4:
+        points = 3
+    elif occurrence == 5:
+        points = 8
+    elif occurrence == 6:
+        points = 10
+    elif occurrence == 7:
+        points = 14
+    elif occurrence == 8:
+        points = 18
+    elif occurrence == 9:
+        points = 24
+    else:
+        points = 0
+    return points
+
+
+end_game = False
+plO_point = 0
+plT_point = 0
+
+while end_game == False:
+    if plT_point >= n_points_max:
+        print("Bravo", p_two_name, "qui remporte la partie avec", plT_point)
+        end_game = True
+    elif plO_point >= n_points_max:
+        print("Bravo", p_one_name, " qui remporte la partie avec", plO_point)
+        end_game = True
+    else:
+        print("Tour suivant")
+        aff = lance()
+        plO_point += assignation_des_points(comptage(aff))
+        print(p_one_name, " a", plO_point, "point(s)")
+        sleep(0.5)
+        plT_point += assignation_des_points(comptage(lance()))
+        print(p_two_name, " a", plT_point, "point(s)")
+        sleep(0.5)
+        print("Fin du tour")
+        sleep(1)
+
