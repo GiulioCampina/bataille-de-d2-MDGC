@@ -1,0 +1,62 @@
+# projet-nsi-2021-bataille-de-d-e
+projet de nsi 2021 , la bataille  de dé 
+GrpGCMD
+Mini projet : Combat de dés (Double 6)
+sommaire:
+1) objetcifs
+2) vue d'enseble du programme 
+3)notes et ajouts effecté au cours du developpement
+
+
+1)
+Cahier des charges :
+Objectif: Comment?
+
+- Lancer les dix dés Fonction : Crée une liste aléatoire de 10 chiffres
+entre 1 et 6
+- Compté le nombre d’occurrence du
+chiffre 6
+Fonction : Parcours la liste crée par la fonction
+précédente à la recherche du chiffre 6 et renvoie
+le nombre d’occurrence du chiffre 6
+- Assigner les points par rapport au
+nombre d’occurrence du chiffre 6
+Fonction : Ajoute le nombre de points
+correspondant au nombre d’occurrence du
+chiffre 6 (voir tableau ci-dessous)
+
+2)
+
+Programme principale :
+-import des différentes bibliothèques
+- Affiche un message de bienvenue ainsi
+que les règles
+Print en plusieurs ligne
+- Choix pseudo player_1 et player_2 Demande d’un pseudo pour chaque player
+- Affiche la liste, le nombre de tour, le
+nombre de points du joueur qui “lance”
+Print dans une boucle while
+- Affiche le vainqueur avec son pseudo et
+le nombre de points qu’il a
+Print dans le meme boucle
+
+3)
+
+(Nous avons volontairement modifié le nombre de point affin de rendre les parties un peu plus
+longues, elles se finissaient généralement entre un ou deux tours lors des premiers test)
+Pour le projet, on a prévu e se répartir équitablement les tâches (Guilio s’occupera
+d’écrire les fonctions dont nous aurons besoin et Mehdi le programme principale) , on a
+prévu des visio-conférences sur Discord, afin de pour réaliser le projet a deux. Nous
+utiliserons pour cela, lafonction partage d’écran et le fait de pouvoir partage du code «
+proprement ».
+On ne pense pas rencontrer de difficulté pour le programme brute, mais on risque
+d’enrencontrer lors des petits ajouts.
+
+notes d'ajouts:
+-ajout de la fonction sleep
+-ajout d'une meilleur assignation des points$
+-possibilitée de choisir le nombre de points requis pour gagner
+
+futurs ajouts:
+-interface graphisue possible pour certaines situations
+-equilibrer l'equitée du jeu
